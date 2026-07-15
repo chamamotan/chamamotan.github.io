@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Account Deletion - PLUMERIA</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="How to request deletion of your account and associated data for games published by PLUMERIA Inc." />
+		<style>
+			:root {
+				--ink: #24272a;
+				--muted: #6f7478;
+				--line: #deded8;
+				--surface: #ffffff;
+				--surface-soft: #f7f7f4;
+				--soft-fill: #eeeeea;
+				--footer: #2f3336;
+				--accent: #3f5c55;
+			}
+
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				background: var(--surface-soft);
+				color: var(--ink);
+				font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+				font-size: 16px;
+				line-height: 1.65;
+			}
+
+			a {
+				color: inherit;
+			}
+
+			.site-header {
+				position: sticky;
+				top: 0;
+				z-index: 20;
+				background: rgba(255, 255, 255, 0.96);
+				border-bottom: 1px solid var(--line);
+			}
+
+			.nav-wrap {
+				width: min(880px, calc(100% - 32px));
+				margin: 0 auto;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 24px;
+				min-height: 64px;
+			}
+
+			.brand {
+				font-weight: 700;
+				text-decoration: none;
+			}
+
+			.nav-links {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+
+			.nav-links a {
+				border-radius: 6px;
+				color: #334149;
+				font-size: 0.94rem;
+				font-weight: 600;
+				padding: 10px 14px;
+				text-decoration: none;
+			}
+
+			.nav-links a:hover {
+				background: var(--soft-fill);
+				color: var(--ink);
+			}
+
+			.container {
+				width: min(880px, calc(100% - 32px));
+				margin: 0 auto;
+			}
+
+			.page-hero {
+				background: var(--surface-soft);
+				border-bottom: 1px solid var(--line);
+				padding: 56px 0;
+			}
+
+			.page-hero h1 {
+				font-size: clamp(2rem, 4vw, 3rem);
+				font-weight: 700;
+				line-height: 1.12;
+				margin: 0 0 18px;
+			}
+
+			.page-hero p {
+				color: var(--muted);
+				font-size: 1.1rem;
+				margin: 0 0 12px;
+				max-width: 680px;
+			}
+
+			.eyebrow {
+				color: var(--muted);
+				font-size: 0.78rem;
+				font-weight: 700;
+				letter-spacing: 0.04em;
+				margin: 0 0 12px;
+				text-transform: uppercase;
+			}
+
+			.section {
+				padding: 44px 0;
+			}
+
+			.section h2 {
+				font-size: clamp(1.5rem, 3vw, 2rem);
+				font-weight: 700;
+				line-height: 1.18;
+				margin: 0 0 16px;
+			}
+
+			.card {
+				background: var(--surface);
+				border: 1px solid var(--line);
+				border-radius: 8px;
+				padding: 24px;
+			}
+
+			.card + .card {
+				margin-top: 22px;
+			}
+
+			.card h3 {
+				font-size: 1.35rem;
+				font-weight: 700;
+				line-height: 1.12;
+				margin: 0 0 14px;
+			}
+
+			.card h4 {
+				font-size: 1rem;
+				font-weight: 700;
+				margin: 24px 0 8px;
+			}
+
+			.card p,
+			.card li {
+				color: var(--muted);
+				overflow-wrap: anywhere;
+			}
+
+			.card p {
+				margin: 0 0 12px;
+			}
+
+			.card p:last-child {
+				margin-bottom: 0;
+			}
+
+			ol.steps {
+				color: var(--muted);
+				margin: 0 0 12px;
+				padding-left: 22px;
+			}
+
+			ol.steps li,
+			.card ul li {
+				margin-bottom: 8px;
+			}
+
+			.card ul {
+				margin: 0 0 12px;
+				padding-left: 22px;
+			}
+
+			.notice {
+				background: var(--soft-fill);
+				border-left: 4px solid var(--accent);
+				border-radius: 0 6px 6px 0;
+				margin: 16px 0;
+				padding: 14px 16px;
+			}
+
+			.notice p {
+				color: var(--ink);
+				margin: 0;
+			}
+
+			code {
+				background: var(--soft-fill);
+				border: 1px solid var(--line);
+				border-radius: 4px;
+				color: var(--ink);
+				font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+				font-size: 0.9em;
+				overflow-wrap: anywhere;
+				padding: 2px 6px;
+			}
+
+			.email-link {
+				color: var(--accent);
+				font-weight: 700;
+			}
+
+			.site-footer {
+				background: var(--footer);
+				color: rgba(255, 255, 255, 0.72);
+				margin-top: 44px;
+				padding: 34px 0;
+			}
+
+			.footer-inner {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 20px;
+			}
+
+			.footer-links {
+				display: flex;
+				gap: 16px;
+			}
+
+			.footer-links a {
+				color: #fff;
+				font-weight: 700;
+				text-decoration: none;
+			}
+
+			@media screen and (max-width: 680px) {
+				.nav-wrap,
+				.container {
+					width: min(100% - 24px, 880px);
+				}
+
+				.page-hero {
+					padding: 44px 0;
+				}
+
+				.section {
+					padding: 36px 0;
+				}
+
+				.footer-inner {
+					align-items: flex-start;
+					flex-direction: column;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="nav-wrap">
+				<a class="brand" href="index.html" aria-label="PLUMERIA home">
+					<span>PLUMERIA</span>
+				</a>
+				<nav class="nav-links" aria-label="Primary navigation">
+					<a href="support.html">Support</a>
+					<a href="privacy_policy.html">Privacy Policy</a>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="page-hero">
+				<div class="container">
+					<p class="eyebrow">Account Deletion</p>
+					<h1>Request deletion of your account</h1>
+					<p>
+						This page explains how to request deletion of your account and associated data
+						for mobile games published by <strong>PLUMERIA Inc.</strong>
+					</p>
+					<p>
+						If you signed in to a game with your Google account, send an email to
+						<a class="email-link" href="mailto:contact@plumeriagames.com">contact@plumeriagames.com</a>
+						from that Google account's email address, with the game name in the subject line.
+						The steps below explain the details.
+					</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="container">
+					<h2>How to request deletion</h2>
+
+					<div class="card">
+						<h3>If you signed in with Google</h3>
+						<ol class="steps">
+							<li>
+								Compose an email to
+								<a class="email-link" href="mailto:contact@plumeriagames.com">contact@plumeriagames.com</a>
+								<strong>from the email address of the Google account you use to sign in to the game.</strong>
+							</li>
+							<li>
+								Put the game name in the subject line, using this format:
+								<code>[Game Name] Account Deletion Request</code>
+								&mdash; for example, <code>[Come On Zombie] Account Deletion Request</code>.
+								The exact subject format for each game is listed in the game sections below.
+							</li>
+							<li>
+								Optionally, include your in-game user ID (UUID) in the email body.
+								This is not required &mdash; it is only useful if you have more than one
+								account in the same game and want to specify which one to delete.
+							</li>
+							<li>
+								We will verify that the sender address matches an account in the game
+								and delete the account and its data. Processing takes up to
+								30 days. We will reply to confirm when deletion is complete.
+							</li>
+						</ol>
+						<div class="notice">
+							<p>
+								<strong>The request must be sent from your Google account's email address.</strong>
+								The sender address is how we verify that the request comes from the account owner.
+								Requests sent from any other address cannot be verified and cannot be processed.
+							</p>
+						</div>
+						<div class="notice">
+							<p>
+								<strong>The subject line must include the game name.</strong>
+								<a class="email-link" href="mailto:contact@plumeriagames.com">contact@plumeriagames.com</a>
+								is a shared address for all PLUMERIA games, and each game stores its accounts
+								separately. Without the game name we cannot locate your account.
+							</p>
+						</div>
+						<p>Account deletion is permanent and cannot be undone.</p>
+					</div>
+
+					<div class="card">
+						<h3>If you play as a guest</h3>
+						<p>
+							Guest accounts are anonymous and have no email address attached, so there is
+							no way for us to verify ownership of a guest account through this page or by
+							email. To delete a guest account, use the account deletion option in the
+							game's in-app settings screen.
+						</p>
+						<p>
+							If you have already uninstalled the app, please note that we have no way to
+							identify which guest account was yours, so we cannot delete it on request.
+							Reinstalling the app and signing in as a guest creates a new account and does
+							not restore access to the previous one.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="container">
+					<h2>Games</h2>
+					<p style="color: var(--muted); margin: 0 0 22px;">
+						Each section below lists, for one game, the email subject line to use and the
+						data that is deleted or retained when the account is deleted.
+					</p>
+
+					<!--
+						To add a new game, copy the card below, change the id, the game name,
+						the subject line, and the data lists, and update the retention period
+						for that game's Firebase project.
+					-->
+
+					<div class="card" id="come-on-zombie">
+						<h3>Come On Zombie</h3>
+
+						<h4>Email subject line</h4>
+						<p><code>[Come On Zombie] Account Deletion Request</code></p>
+
+						<h4>Data that is deleted</h4>
+						<ul>
+							<li>
+								<strong>Account information</strong> (personal data, stored in Firebase
+								Authentication): email address and user ID.
+							</li>
+							<li>
+								<strong>Game progress data</strong> (stored in Firebase Realtime Database):
+								gold, gems, energy, account experience, summon tickets (normal and premium),
+								owned characters with their levels and awakening status, deck composition,
+								stage progress, counterattack mode data, and quest and achievement progress.
+							</li>
+						</ul>
+
+						<h4>Data that is retained</h4>
+						<p>
+							Analytics data collected by Firebase Analytics is not tied to your game account
+							and is not removed by account deletion. It expires and is deleted automatically
+							after 14 months, in line with the data retention settings of this
+							game's Firebase project.
+						</p>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container footer-inner">
+				<p>&copy; PLUMERIA Inc.</p>
+				<div class="footer-links">
+					<a href="privacy_policy.html">Privacy Policy</a>
+					<a href="mailto:contact@plumeriagames.com">Email</a>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
