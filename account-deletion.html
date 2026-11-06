@@ -279,6 +279,8 @@
 						If you signed in to a game with your Google account, send an email to
 						<a class="email-link" href="mailto:contact@plumeriagames.com">contact@plumeriagames.com</a>
 						from that Google account's email address, with the game name in the subject line.
+						If you play as a guest, use the account deletion option in the game's settings screen,
+						or, in games without one, email us your in-game user ID.
 						The steps below explain the details.
 					</p>
 				</div>
@@ -334,17 +336,37 @@
 					<div class="card">
 						<h3>If you play as a guest</h3>
 						<p>
-							Guest accounts are anonymous and have no email address attached, so there is
-							no way for us to verify ownership of a guest account through this page or by
-							email. To delete a guest account, use the account deletion option in the
-							game's in-app settings screen.
+							Guest accounts are anonymous and have no email address attached, so we cannot
+							verify ownership of a guest account by the sender's email address. How you delete
+							a guest account depends on the game:
 						</p>
+						<ul>
+							<li>
+								<strong>If the game's settings screen has an account deletion option</strong>,
+								use that option.
+							</li>
+							<li>
+								<strong>If the game has no such option</strong> (see the game sections below),
+								email <a class="email-link" href="mailto:contact@plumeriagames.com">contact@plumeriagames.com</a>
+								with the subject <code>[Game Name] Account Deletion Request</code> and include the
+								user ID shown in the game's settings screen. We will use the user ID to find the
+								account, delete it and its data within 10 days of receiving your request, and reply
+								to confirm when deletion is complete.
+							</li>
+						</ul>
+						<div class="notice">
+							<p>
+								<strong>Do not share your user ID publicly.</strong>
+								For a guest account, the user ID is how we identify the account in a deletion request.
+							</p>
+						</div>
 						<p>
-							If you have already uninstalled the app, please note that we have no way to
-							identify which guest account was yours, so we cannot delete it on request.
+							If you have already uninstalled the app and do not have your user ID, please note that
+							we have no way to identify which guest account was yours, so we cannot delete it on request.
 							Reinstalling the app and signing in as a guest creates a new account and does
 							not restore access to the previous one.
 						</p>
+						<p>Account deletion is permanent and cannot be undone.</p>
 					</div>
 				</div>
 			</section>
@@ -390,6 +412,59 @@
 							after 14 months, in line with the data retention settings of this
 							game's Firebase project.
 						</p>
+					</div>
+
+					<div class="card" id="zeroth">
+						<h3>Zeroth: The Black Well</h3>
+						<p>
+							Zeroth: The Black Well uses guest accounts only and does not have an account deletion
+							option in the game, so please request deletion by email.
+						</p>
+
+						<h4>Email subject line</h4>
+						<p><code>[Zeroth] Account Deletion Request</code></p>
+
+						<h4>What to include</h4>
+						<p>
+							Your user ID, shown in the game's Settings &rarr; <strong>Data Recovery</strong> screen.
+							You can send the request from any email address. If you write to us from
+							Settings &rarr; <strong>Contact Us</strong> in the game, your user ID is added to the
+							email automatically; change the subject line to the one above.
+						</p>
+
+						<h4>Data that is deleted</h4>
+						<ul>
+							<li>
+								<strong>Account information</strong> (stored in Firebase Authentication):
+								anonymous user ID.
+							</li>
+							<li>
+								<strong>Server mail</strong> (stored in Cloud Firestore): mail sent to your
+								account and whether it was received.
+							</li>
+							<li>
+								<strong>Data recovery codes</strong> (stored in Cloud Firestore): any data
+								recovery code we issued for you, including the copy of game data stored with it.
+							</li>
+						</ul>
+						<p>
+							Your game progress is saved only on your device, not on our servers. It is removed
+							when you uninstall the app.
+						</p>
+
+						<h4>Data that is retained</h4>
+						<ul>
+							<li>
+								<strong>Purchase records</strong> (product ID, transaction ID, platform, app version,
+								purchase time): kept for 5 years, as required by the Korean Act on Consumer
+								Protection in Electronic Commerce, and then deleted.
+							</li>
+							<li>
+								<strong>Analytics data</strong> collected by Firebase Analytics is not removed by
+								account deletion. It expires and is deleted automatically after 14 months, in line
+								with the data retention settings of this game's Firebase project.
+							</li>
+						</ul>
 					</div>
 				</div>
 			</section>
