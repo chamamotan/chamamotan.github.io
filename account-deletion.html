@@ -466,6 +466,65 @@
 							</li>
 						</ul>
 					</div>
+
+					<div class="card" id="lone-chronicle">
+						<h3>Lone Chronicle</h3>
+						<p>
+							Lone Chronicle uses guest accounts only. You can delete your account in the game from
+							Settings &rarr; <strong>Delete Account</strong>. If you cannot use that option, please
+							request deletion by email.
+						</p>
+
+						<h4>Email subject line</h4>
+						<p><code>[Lone Chronicle] Account Deletion Request</code></p>
+
+						<h4>What to include</h4>
+						<p>
+							Your user ID, shown as <strong>My ID</strong> in the game's Settings &rarr;
+							<strong>Data Recovery</strong> screen. You can send the request from any email address.
+							If you write to us from Settings &rarr; <strong>Contact Us</strong> in the game, your user ID
+							is added to the email automatically; change the subject line to the one above.
+						</p>
+
+						<h4>Data that is deleted</h4>
+						<ul>
+							<li>
+								<strong>Account information</strong> (stored in Firebase Authentication):
+								anonymous user ID.
+							</li>
+							<li>
+								<strong>Game data backup</strong> (stored in Cloud Firestore): the copy of your game
+								data that the game backs up to our server for data recovery.
+							</li>
+							<li>
+								<strong>Server mail</strong> (stored in Cloud Firestore): mail sent to your
+								account and whether it was received.
+							</li>
+							<li>
+								<strong>Data recovery codes</strong> (stored in Cloud Firestore): any data
+								recovery code we issued for you, including the copy of game data stored with it.
+							</li>
+						</ul>
+						<p>
+							When you delete your account from the game's settings screen, the game data saved on
+							your device is deleted as well. If you request deletion by email, the game data on your
+							device is removed when you uninstall the app.
+						</p>
+
+						<h4>Data that is retained</h4>
+						<ul>
+							<li>
+								<strong>Purchase records</strong> (product ID, transaction ID, order ID, price, platform,
+								app version, purchase time): kept for 5 years, as required by the Korean Act on Consumer
+								Protection in Electronic Commerce, and then deleted.
+							</li>
+							<li>
+								<strong>Analytics data</strong> collected by Firebase Analytics is not removed by
+								account deletion. It expires and is deleted automatically after 14 months, in line
+								with the data retention settings of this game's Firebase project.
+							</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</main>
