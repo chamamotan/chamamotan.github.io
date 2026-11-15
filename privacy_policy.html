@@ -218,7 +218,7 @@
 						<p>
 							How PLUMERIA Inc. handles personal information in all of the games and apps it publishes.
 						</p>
-						<p class="meta">Effective date: November 7, 2026</p>
+						<p class="meta">Effective date: November 22, 2026</p>
 					</div>
 				</section>
 
@@ -298,21 +298,27 @@
 										</tr>
 										<tr>
 											<td>Usage statistics</td>
-											<td>App instance ID, device model, OS and version, language, country/region (approximate location), app version, in-game events (character creation, level up, boss defeated, shop opened, purchase, ad reward, etc.)</td>
+											<td>App instance ID, device model, OS and version, language, country/region (approximate location), app version, in-game events (character creation, level up, boss defeated, run results, shop opened, purchase, ad reward, etc.)</td>
 											<td>Improving the Service and analyzing usage</td>
 											<td>Collected automatically (Google Analytics for Firebase)</td>
 										</tr>
 										<tr>
 											<td>Advertising</td>
 											<td>Advertising ID (IDFA/AAID, if you allow it), IP address, device information, ad consent status</td>
-											<td>Showing rewarded ads, frequency capping and fraud prevention, personalized ads (if you consent)</td>
+											<td>Showing ads (banners, interstitials and rewarded ads), frequency capping and fraud prevention, personalized ads (if you consent)</td>
 											<td>Collected automatically (Google AdMob)</td>
 										</tr>
 										<tr>
 											<td>Errors and device information</td>
-											<td>Device model, OS, graphics device, memory, screen resolution, app ID, error details</td>
-											<td>Analyzing errors and improving performance</td>
-											<td>Collected automatically (Unity engine diagnostics)</td>
+											<td>Device model, OS, graphics device, memory, screen resolution, app ID, installation ID, error and crash details</td>
+											<td>Analyzing errors and crashes and improving performance</td>
+											<td>Collected automatically (Firebase Crashlytics, Unity engine diagnostics)</td>
+										</tr>
+										<tr>
+											<td>Game settings</td>
+											<td>Installation ID, app version, device language and country/region</td>
+											<td>Delivering game settings (such as balance values) without an app update</td>
+											<td>Collected automatically (Firebase Remote Config)</td>
 										</tr>
 										<tr>
 											<td>Support</td>
@@ -375,12 +381,12 @@
 										</tr>
 										<tr>
 											<td>
-												Google LLC<br />(Firebase Authentication, Cloud Firestore, Realtime Database, Google Analytics)<br />
+												Google LLC<br />(Firebase Authentication, Cloud Firestore, Realtime Database, Google Analytics, Crashlytics, Remote Config)<br />
 												<a href="https://firebase.google.com/support/privacy">Privacy information</a>
 											</td>
-											<td>Guest and Google sign-in; storing backups, purchase records and mail; usage statistics</td>
+											<td>Guest and Google sign-in; storing backups, purchase records and mail; usage statistics; crash reports; game settings</td>
 											<td>United States, Republic of Korea or other countries with Google data centers (the database location is chosen per game)</td>
-											<td>Identification, account, backup, purchase, mail and usage items in section 1</td>
+											<td>Identification, account, backup, purchase, mail, usage, error and game settings items in section 1</td>
 											<td>Sent over the network while you use the app</td>
 											<td>As in section 2</td>
 										</tr>
@@ -517,6 +523,11 @@
 								<p>
 									If this policy changes, we will post the new version on this page with a new effective date.
 									Changes that are unfavorable to you will be announced at least 7 days before they take effect.
+								</p>
+								<p>
+									This version (effective November 22, 2026) adds Firebase Crashlytics (crash reports) and
+									Firebase Remote Config (game settings), and names banner and interstitial ads. Until it takes
+									effect, the <a href="privacy_policy_2026-11-07.html">previous version (effective November 7, 2026)</a> applies.
 								</p>
 							</section>
 						</article>
